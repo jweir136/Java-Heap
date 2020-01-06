@@ -30,6 +30,9 @@ public class MaxHeap {
   }
 
   private void swim(int k) {
-    // TODO
+    while (k > 1 && this.arr.get(k).compareTo(this.arr.get(k / 2)) > 0) {
+      swap(k, k / 2);
+      k /= 2;
+    }
   }
 }
