@@ -7,5 +7,10 @@ public class Main {
       heap.insert(i);
 
     System.out.println(heap);
+    System.out.println();
+    System.out.println(heap.delMax());
+    System.out.println(heap.delMax());
+    System.out.println(heap.delMax());
+    System.out.println(heap.delMax());
   }
 }

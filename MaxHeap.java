@@ -61,11 +61,11 @@ public class MaxHeap {
 
   @Override
   public String toString() {
-    String result = "[ ";
+    String result = "";
 
-    for (int i = 1; i < this.size; i++)
+    for (int i = 1; i < this.arr.size(); i++)
       result += this.arr.get(i) + " ";
 
-    return result += "]";
+    return result;
   }
 }
