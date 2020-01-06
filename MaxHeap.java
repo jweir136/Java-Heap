@@ -30,7 +30,19 @@ public class MaxHeap {
   }
 
   private void sink(int k) {
-    // TODO
+    // CREDIT: This method is copied from "Algorithms: Fourth Edition"
+    while (2 * k <= this.size) {
+      int j = 2 * k;
+
+      if (j < this.size && this.arr.get(j).compareTo(this.arr.get(j + 1)) < 0)
+        j++;
+
+      if (this.arr.get(k).compareTo(this.arr.get(j)) > 0)
+        break;
+
+      swap(k, j);
+      k = j;
+    }
   }
 
   private void swim(int k) {
