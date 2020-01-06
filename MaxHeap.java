@@ -19,6 +19,7 @@ public class MaxHeap {
 
   public Comparable delMax() {
     // TODO
+    return new Integer(1); // return a random placeholder to void compile-time error.
   }
 
   private void swap(int idx1, int idx2) {
@@ -37,5 +38,15 @@ public class MaxHeap {
       swap(k, k / 2);
       k /= 2;
     }
+  }
+
+  @Override
+  public String toString() {
+    String result = "[ ";
+
+    for (int i = 1; i < this.size; i++)
+      result += this.arr.get(i) + " ";
+
+    return result += "]"
   }
 }
