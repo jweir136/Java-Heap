@@ -18,8 +18,15 @@ public class MaxHeap {
   }
 
   public Comparable delMax() {
-    // TODO
-    return new Integer(1); // return a random placeholder to void compile-time error.
+    Comparable max = this.arr.get(1);
+
+    swap(1, this.size - 1);
+    this.arr.remove(this.size - 1);
+    this.size--;
+
+    sink(1);
+
+    return max;    
   }
 
   private void swap(int idx1, int idx2) {
