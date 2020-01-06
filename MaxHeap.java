@@ -11,7 +11,10 @@ public class MaxHeap {
   }
 
   public void insert(Comparable[] value) {
-    // TODO
+    this.arr.add(value);
+    this.size++;
+
+    swim(this.size - 1);
   }
 
   public Comparable delMax() {
