@@ -5,5 +5,7 @@ public class Main {
 
     for (Integer i : arr)
       heap.insert(i);
+
+    System.out.println(heap);
   }
 }

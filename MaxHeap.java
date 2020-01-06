@@ -10,7 +10,7 @@ public class MaxHeap {
     this.size = 0;
   }
 
-  public void insert(Comparable[] value) {
+  public void insert(Comparable value) {
     this.arr.add(value);
     this.size++;
 
@@ -47,6 +47,6 @@ public class MaxHeap {
     for (int i = 1; i < this.size; i++)
       result += this.arr.get(i) + " ";
 
-    return result += "]"
+    return result += "]";
   }
 }
