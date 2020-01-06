@@ -29,6 +29,11 @@ public class MaxHeap {
     return max;    
   }
 
+  public void fromArray(Comparable[] arr) {
+    for (Comparable value : arr)
+      insert(value);
+  }
+
   private void swap(int idx1, int idx2) {
     Comparable temp = this.arr.get(idx1);
 
