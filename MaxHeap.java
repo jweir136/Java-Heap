@@ -11,7 +11,7 @@ public class MaxHeap {
   }
 
   public int parent(int pos){
-    return pos/2;
+    return pos / 2;
   }
 
   public void insert(Comparable value) {
@@ -22,9 +22,8 @@ public class MaxHeap {
   }
 
   public void print() {
-    for (int i = 1; i <= this.arr.size()-1; i++) {
+    for (int i = 1; i <= this.arr.size()-1; i++)
       System.out.println(" node : " + this.arr.get(i));
-    }
   }
 
   public Comparable delMax() {
@@ -37,13 +36,5 @@ public class MaxHeap {
 
     this.arr.set(idx1, this.arr.get(idx2));
     this.arr.set(idx2, temp);
-  }
-
-  private void sink(int k) {
-    // TODO
-  }
-
-  private void swim(int k) {
-    // TODO
   }
 }
