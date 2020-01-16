@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class MaxHeap {
@@ -6,32 +7,32 @@ public class MaxHeap {
 
   public MaxHeap() {
     this.arr = new ArrayList<Comparable>();
-    this.arr.add(0); // make sure that the first position can never be used.
     this.size = 0;
+    this.arr.add(Integer.MAX_VALUE); // make sure that the first position can never be used.
   }
-
+  public int parent(int pos){
+    return pos/2;
+  }
   public void insert(Comparable value) {
+    //size++;
     this.arr.add(value);
-    this.size++;
+    System.out.println("inserting " +this.arr.size());
+    int current = this.arr.size()-1;
+    while(this.arr.get(current).compareTo(this.arr.get(parent(current) )) > 0){
+      swap(current,parent(current));
+      current = parent(current);
+    }
 
-    swim(this.size - 1);
+  }
+  public void print() {
+    for (int i = 1; i <= this.arr.size()-1; i++) {
+      System.out.println(" node : " + this.arr.get(i));
+    }
   }
 
   public Comparable delMax() {
-    Comparable max = this.arr.get(1);
-
-    swap(1, this.size - 1);
-    this.arr.remove(this.size - 1);
-    this.size--;
-
-    sink(1);
-
-    return max;    
-  }
-
-  public void fromArray(Comparable[] arr) {
-    for (Comparable value : arr)
-      insert(value);
+    return null;
+    // TODO
   }
 
   private void swap(int idx1, int idx2) {
@@ -42,35 +43,10 @@ public class MaxHeap {
   }
 
   private void sink(int k) {
-    // CREDIT: This method is copied from "Algorithms: Fourth Edition"
-    while (2 * k <= this.size) {
-      int j = 2 * k;
-
-      if (j < this.size && this.arr.get(j).compareTo(this.arr.get(j + 1)) < 0)
-        j++;
-
-      if (this.arr.get(k).compareTo(this.arr.get(j)) > 0)
-        break;
-
-      swap(k, j);
-      k = j;
-    }
+    // TODO
   }
 
   private void swim(int k) {
-    while (k > 1 && this.arr.get(k).compareTo(this.arr.get(k / 2)) > 0) {
-      swap(k, k / 2);
-      k /= 2;
-    }
-  }
-
-  @Override
-  public String toString() {
-    String result = "";
-
-    for (int i = 1; i < this.arr.size(); i++)
-      result += this.arr.get(i) + " ";
-
-    return result;
+    // TODO
   }
 }
